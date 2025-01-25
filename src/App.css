@@ -82,3 +82,10 @@ p {
 p span {
   color: red;
 }
+
+@media screen and (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
