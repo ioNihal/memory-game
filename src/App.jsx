@@ -9,6 +9,9 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
   const [page, setPage] = useState(2);
   const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(true)
+
+
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -20,6 +23,7 @@ function App() {
         caption: item.author,
       }));
       setCards(cardsData);
+      setLoading(false);
     };
     fetchImages();
   }, [page]);
@@ -33,9 +37,10 @@ function App() {
     }
   }, [score])
 
- const handleChangeImage = () => {
-  setPage(page + 1)
- }
+  const handleChangeImage = () => {
+    setLoading(true)
+    setPage(page + 1)
+  }
 
 
 
@@ -50,12 +55,16 @@ function App() {
         <button onClick={handleChangeImage}>Change Images: {page - 1}</button>
       </div>
       {
-        success &&
-        <Success page={page} setPage={setPage} setSuccess={setSuccess} setScore={setScore} /> || (
-          <div className="cards-container">
-            <Card cards={cards} bestScore={bestScore} score={score} setBestScore={setBestScore} setScore={setScore} />
-          </div>
-        )
+        success ?
+          <Success page={page} setPage={setPage} setSuccess={setSuccess} setScore={setScore} /> :
+          loading ? (
+            <div className="loading">
+             <h3>Loading...</h3>
+            </div>
+          ) :
+            <div className="cards-container">
+              <Card cards={cards} bestScore={bestScore} score={score} setBestScore={setBestScore} setScore={setScore} />
+            </div>
       }
       <p>
         "<span>MindMaze: The Ultimate Memory Challenge!</span>"<br />

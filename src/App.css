@@ -83,6 +83,11 @@ p span {
   color: red;
 }
 
+.loading {
+  color: white;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   .cards-container {
     grid-template-columns: repeat(4, 1fr);
