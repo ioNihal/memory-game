@@ -3,7 +3,7 @@
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
         0 1px 3px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all ease-in-out 0.2s;
 }
 
 .card:hover {
@@ -17,4 +17,8 @@
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+
+    background-color: rgb(39, 39, 39);
+    transition: all ease-in-out 0.2s;
+
 }

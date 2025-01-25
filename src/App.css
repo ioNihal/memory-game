@@ -3,6 +3,7 @@
   width: 100vw;
   padding: 0;
   margin: 0;
+
 }
 
 body {
@@ -10,6 +11,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   background-color: rgb(22, 22, 22);
+
+
 }
 
 h1 {
@@ -34,6 +37,27 @@ h1 {
   gap: 15px;
   justify-content: space-between;
   align-items: start;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper>button {
+  all: unset;
+  background-color: rgb(139, 28, 28);
+  color: aliceblue;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.wrapper>button:hover {
+  border: 1px solid rgb(255, 26, 26);
+  background-color: rgb(49, 3, 3);
 }
 
 .cards-container {
