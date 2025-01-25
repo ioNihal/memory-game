@@ -88,4 +88,13 @@ p span {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
+
+  .wrapper {
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  .score-container {
+    margin: 0;
+  }
 }
