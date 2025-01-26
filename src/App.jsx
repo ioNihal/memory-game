@@ -38,6 +38,7 @@ function App() {
   }, [score])
 
   const handleChangeImage = () => {
+    setScore(0)
     setLoading(true)
     setPage(page + 1)
   }
